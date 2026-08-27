@@ -31,11 +31,11 @@ jobs:
         run: |
           python3 scripts/generate.py
 
-      - name: Download Cloudflare IPv4 ranges
+       - name: Download Cloudflare IPv4 ranges
         run: |
           curl -fsSL https://www.cloudflare.com/ips-v4/ \
-            -o site/Cloudflare-ip-ranges.txt
-
+            -o site/dynamic-list/Cloudflare-ip-ranges/Cloudflare-ip-ranges.txt
+            
       - name: Create Pages index
         run: |
           cat > site/index.html <<'EOF'
