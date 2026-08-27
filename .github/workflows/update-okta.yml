@@ -51,14 +51,14 @@ jobs:
 
             <h2>Okta</h2>
             <p>
-              <a href="dynamic-list/okta-ip-ranges/okta-ip-ranges.txt">
+              <a href="/okta-ip-ranges/okta-ip-ranges.txt">
                 Download Okta IP ranges
               </a>
             </p>
 
             <h2>Cloudflare</h2>
             <p>
-              <a href="dynamic-list/Cloudflare-ip-ranges/Cloudflare-ip-ranges.txt">
+              <a href="/Cloudflare-ip-ranges/Cloudflare-ip-ranges.txt">
                 Download Cloudflare IP ranges
               </a>
             </p>
