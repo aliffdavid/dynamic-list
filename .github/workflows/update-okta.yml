@@ -1,11 +1,10 @@
+```yaml
 name: Update Okta and Cloudflare IP Ranges
 
 on:
   schedule:
     - cron: "17 */6 * * *"
-
   workflow_dispatch:
-
   push:
     branches:
       - main
@@ -16,7 +15,7 @@ permissions:
   id-token: write
 
 concurrency:
-  group: "pages"
+  group: pages
   cancel-in-progress: false
 
 jobs:
@@ -28,8 +27,7 @@ jobs:
         uses: actions/checkout@v6
 
       - name: Generate Okta IP list
-        run: |
-          python3 scripts/generate.py
+        run: python3 scripts/generate.py
 
       - name: Download Cloudflare IPv4 ranges
         run: |
@@ -62,7 +60,6 @@ jobs:
                 Download Cloudflare IP ranges
               </a>
             </p>
-
           </body>
           </html>
           EOF
@@ -73,11 +70,10 @@ jobs:
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v4
         with:
-          path: "./site"
+          path: ./site
 
   deploy:
     needs: build
-
     runs-on: ubuntu-latest
 
     environment:
