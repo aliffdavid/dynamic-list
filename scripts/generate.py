@@ -7,7 +7,7 @@ import ipaddress
 from pathlib import Path
 
 SOURCE_URL = "https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json"
-OUTPUT_FILE = Path("site/okta-ip-ranges.txt")
+OUTPUT_FILE = Path("site/dynamic-list/okta-ip-ranges/okta-ip-ranges.txt")
 
 
 def download_json(url):
