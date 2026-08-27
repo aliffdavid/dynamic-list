@@ -33,9 +33,10 @@ jobs:
 
       - name: Download Cloudflare IPv4 ranges
         run: |
+          mkdir -p site/dynamic-list/Cloudflare-ip-ranges
           curl -fsSL https://www.cloudflare.com/ips-v4/ \
             -o site/dynamic-list/Cloudflare-ip-ranges/Cloudflare-ip-ranges.txt
-
+            
       - name: Create Pages index
         run: |
           cat > site/index.html <<'EOF'
