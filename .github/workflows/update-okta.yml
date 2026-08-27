@@ -1,4 +1,4 @@
-name: Update Okta IP Ranges
+name: Update Okta and Cloudflare IP Ranges
 
 on:
   schedule:
@@ -31,6 +31,11 @@ jobs:
         run: |
           python3 scripts/generate.py
 
+      - name: Download Cloudflare IPv4 ranges
+        run: |
+          curl -fsSL https://www.cloudflare.com/ips-v4/ \
+            -o site/Cloudflare-ip-ranges.txt
+
       - name: Create Pages index
         run: |
           cat > site/index.html <<'EOF'
@@ -38,12 +43,25 @@ jobs:
           <html>
           <head>
             <meta charset="UTF-8">
-            <title>Okta IP Ranges</title>
+            <title>Firewall IP Ranges</title>
           </head>
           <body>
-            <h1>Okta IP Ranges</h1>
-            <p>Automatically generated from the public Okta IP range feed.</p>
-            <p><a href="okta-ip-ranges.txt">Download IP ranges</a></p>
+            <h1>Firewall IP Ranges</h1>
+
+            <h2>Okta</h2>
+            <p>
+              <a href="okta-ip-ranges.txt">
+                Download Okta IP ranges
+              </a>
+            </p>
+
+            <h2>Cloudflare</h2>
+            <p>
+              <a href="Cloudflare-ip-ranges.txt">
+                Download Cloudflare IP ranges
+              </a>
+            </p>
+
           </body>
           </html>
           EOF
