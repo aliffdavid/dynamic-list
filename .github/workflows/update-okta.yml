@@ -1,4 +1,3 @@
-```yaml
 name: Update Okta and Cloudflare IP Ranges
 
 on:
