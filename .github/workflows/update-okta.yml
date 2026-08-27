@@ -1,4 +1,4 @@
-yaml
+```yaml
 name: Update Okta and Cloudflare IP Ranges
 
 on:
@@ -34,9 +34,9 @@ jobs:
 
       - name: Download Cloudflare IPv4 ranges
         run: |
-          mkdir -p Cloudflare-ip-ranges
+          mkdir -p site/Cloudflare-ip-ranges
           curl -fsSL https://www.cloudflare.com/ips-v4/ \
-            -o Cloudflare-ip-ranges/Cloudflare-ip-ranges.txt
+            -o site/Cloudflare-ip-ranges/Cloudflare-ip-ranges.txt
 
       - name: Create Pages index
         run: |
@@ -52,14 +52,14 @@ jobs:
 
             <h2>Okta</h2>
             <p>
-              <a href="okta-ip-ranges/okta-ip-ranges.txt">
+              <a href="https://aliffdavid.github.io/dynamic-list/okta-ip-ranges/okta-ip-ranges.txt">
                 Download Okta IP ranges
               </a>
             </p>
 
             <h2>Cloudflare</h2>
             <p>
-              <a href="Cloudflare-ip-ranges/Cloudflare-ip-ranges.txt">
+              <a href="https://aliffdavid.github.io/dynamic-list/Cloudflare-ip-ranges/Cloudflare-ip-ranges.txt">
                 Download Cloudflare IP ranges
               </a>
             </p>
