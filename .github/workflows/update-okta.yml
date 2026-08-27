@@ -61,8 +61,7 @@ jobs:
                 Download Cloudflare IP ranges
               </a>
             </p>
-
-          </body>
+            </body>
           </html>
           EOF
 
