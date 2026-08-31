@@ -27,6 +27,21 @@ jobs:
 
       - name: Generate Okta IP list
         run: python3 scripts/generate.py
+     
+      - name: Verify Okta files
+        run: |
+          echo "=== Okta full list ==="
+          ls -lh site/okta-ip-ranges/okta-ip-ranges.txt
+          wc -l site/okta-ip-ranges/okta-ip-ranges.txt
+
+          echo ""
+          echo "=== Okta US Cell 10 ==="
+          ls -lh site/okta-us-cell10/okta-us-cell10.txt
+          wc -l site/okta-us-cell10/okta-us-cell10.txt
+
+          echo ""
+          echo "=== First 10 US Cell 10 entries ==="
+          head -10 site/okta-us-cell10/okta-us-cell10.txt
 
       - name: Download Cloudflare IPv4 ranges
         run: |
