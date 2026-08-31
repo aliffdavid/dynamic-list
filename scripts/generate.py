@@ -12,7 +12,7 @@ SOURCE_URL = "https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json"
 OUTPUT_FILE = Path("site/okta-ip-ranges/okta-ip-ranges.txt")
 
 # New US Cell 10 list
-US_CELL10_OUTPUT_FILE = Path("site/okta-ip-ranges/okta-us-cell10.txt")
+US_CELL10_OUTPUT_FILE = Path("site/okta-us-cell10/okta-us-cell10.txt")
 
 
 def download_json(url):
